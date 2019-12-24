@@ -10,6 +10,7 @@ LICENSE.txt
 .rar
 .idea
 .exe
+.factorypath
 
 /doc
 /bin
@@ -18,6 +19,7 @@ LICENSE.txt
 
 *.iml
 *.cfg
+~$*.docx
 .settings/*
 /indexes/*
 /target/*

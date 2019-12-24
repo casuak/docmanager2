@@ -1,0 +1,54 @@
+spring:
+  http:
+    encoding:
+      # 中文乱码解决
+      force: true
+      charset: utf-8
+      enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/yunpan?useSSL=false&serverTimezone=GMT%2b8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+  mvc:
+    # 出现错误时，直接抛出异常
+    throw-exception-if-no-handler-found: true
+  thymeleaf:
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100GB
+      max-request-size: 100GB
+server:
+  tomcat:
+    # 中文乱码解决
+    uri-encoding: UTF-8
+  port: 8081
+  ssl:
+    key-store: classpath:sample.jks
+    key-store-password: secret
+    key-password: password
+http:
+  port: 8080
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.springboot.yunpan
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+httpclient:
+  # 最大连接数
+  maxTotal: 100
+  # 并发数
+  defaultMaxPerRoute: 20
+  # 创建连接最长时间
+  connectTimeout: 1000
+  # 从连接池中获取连接的最长时间
+  connectionRequestTimeout: 500
+  # 数据传输最长时间
+  socketTimeout: 10000
+  # 提交请求前测试连接是否可用
+  staleConnectionCheckEnabled: true
